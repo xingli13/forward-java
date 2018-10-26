@@ -1,22 +1,27 @@
-# 并发
+# Java
 
-## Java 并发
+## Java 多线程
+
+* [多线程系列文章](https://github.com/Snailclimb/Java_Guide/blob/master/Java相关/多线程系列.md)
+* [值得立马保存的 synchronized 关键字总结](https://github.com/Snailclimb/Java_Guide/blob/master/Java相关/synchronized.md)
+
+### Java 并发
 
 * [深入浅出 Java Concurrency](http://www.blogjava.net/xylz/archive/2010/06/30/324915.html)
 * [Java 并发知识合集](https://github.com/CL0610/Java-concurrency)
 * [JAVA并发知识图谱](https://github.com/CL0610/Java-concurrency/blob/master/Java并发知识图谱.png)
 
-## 多线程
+### 多线程
 
 * [《40个Java多线程问题总结》](http://www.importnew.com/18459.html)
 
-## 线程安全
+### 线程安全
 
 * [《Java并发编程——线程安全及解决机制简介》](https://www.cnblogs.com/zhanht/p/5450325.html)
 
-## 锁
+### 锁
 
-### Java中的锁和同步类
+#### Java中的锁和同步类
 
 * [《Java中的锁分类》](https://www.cnblogs.com/qifengshi/p/6831055.html)
 	* 主要包括 synchronized、ReentrantLock、和 ReadWriteLock。 
@@ -30,14 +35,14 @@
 * [《java开发中的Mutex vs Semaphore》](https://www.cnblogs.com/davidwang456/p/6094947.html)
 	* 简单的说 就是Mutex是排它的，只有一个可以获取到资源， Semaphore也具有排它性，但可以定义多个可以获取的资源的对象。	 
 
-### 公平锁 & 非公平锁
+#### 公平锁 & 非公平锁
 
 公平锁的作用就是严格按照线程启动的顺序来执行的，不允许其他线程插队执行的；而非公平锁是允许插队的。
 
 * [《公平锁与非公平锁》](https://blog.csdn.net/EthanWhite/article/details/55508357)
 	* 默认情况下 ReentrantLock 和 synchronized 都是非公平锁。ReentrantLock 可以设置成公平锁。
 
-### 悲观锁 
+#### 悲观锁 
 
 悲观锁如果使用不当（锁的条数过多），会引起服务大面积等待。推荐优先使用乐观锁+重试。
 
@@ -51,12 +56,12 @@
 	
 * [《Mysql并发时经典常见的死锁原因及解决方法》](https://www.cnblogs.com/zejin2008/p/5262751.html)
 
-### 乐观锁 & CAS
+#### 乐观锁 & CAS
 
 * [《乐观锁的一种实现方式——CAS》](http://www.importnew.com/20472.html)
 	* 和MySQL乐观锁方式相似，只不过是通过和原值进行比较。	 
 
-### ABA 问题
+#### ABA 问题
 
 由于高并发，在CAS下，更新后可能此A非彼A。通过版本号可以解决，类似于上文Mysql 中提到的的乐观锁。
 
@@ -64,7 +69,7 @@
 * [《Java 中 ABA问题及避免》](https://blog.csdn.net/li954644351/article/details/50511879)
 	* AtomicStampedReference 和 AtomicStampedReference。 
 
-### CopyOnWrite容器
+#### CopyOnWrite容器
 
 可以对CopyOnWrite容器进行并发的读，而不需要加锁。CopyOnWrite并发容器用于读多写少的并发场景。比如白名单，黑名单，商品类目的访问和更新场景，不适合需要数据强一致性的场景。
 
@@ -74,10 +79,10 @@
 	
 * [《聊聊并发-Java中的Copy-On-Write容器》](https://blog.csdn.net/a494303877/article/details/53404623)
 
-### RingBuffer 
+#### RingBuffer 
 * [《线程安全的无锁RingBuffer的实现【一个读线程，一个写线程】》](http://www.cnblogs.com/l00l/p/4115001.html)
 
-### 可重入锁 & 不可重入锁
+#### 可重入锁 & 不可重入锁
 
 * [《可重入锁和不可重入锁》](https://www.cnblogs.com/dj3839/p/6580765.html)
 	* 通过简单代码举例说明可重入锁和不可重入锁。
@@ -90,14 +95,14 @@
 	* ReenTrantLock 使用灵活，锁的公平性可以定制。
 	* 相同加锁场景下，推荐使用 synchronized。
 
-### 互斥锁 & 共享锁
+#### 互斥锁 & 共享锁
 
 互斥锁：同时只能有一个线程获得锁。比如，ReentrantLock 是互斥锁，ReadWriteLock 中的写锁是互斥锁。
 共享锁：可以有多个线程同时或的锁。比如，Semaphore、CountDownLatch 是共享锁，ReadWriteLock 中的读锁是共享锁。
 
 * [《ReadWriteLock场景应用》](https://www.cnblogs.com/liang1101/p/6475555.html)
 
-### 死锁
+#### 死锁
 * [《“死锁”四个必要条件的合理解释》](https://blog.csdn.net/yunfenglw/article/details/45950305)
 	* 互斥、持有、不可剥夺、环形等待。
 * [Java如何查看死锁？](https://blog.csdn.net/u014039577/article/details/52351626)
@@ -106,3 +111,33 @@
 * [java多线程系列：死锁及检测](https://blog.csdn.net/bohu83/article/details/51135061)
 	* jstack 可以显示死锁。
 
+## Java/J2EE基础
+
+- [Java 基础知识回顾](https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/Java基础知识.md)
+- [J2EE 基础知识回顾](https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/J2EE基础知识.md)
+- [static、final、this、super关键字总结](https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/final、static、this、super.md)
+- [static 关键字详解](https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/static.md)   
+
+
+## Java 集合框架
+
+* [这几道Java集合框架面试题几乎必问](https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/这几道Java集合框架面试题几乎必问.md)
+* [Java 集合框架常见面试题总结](https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/Java集合框架常见面试题总结.md)
+* [ArrayList 源码学习](https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/ArrayList.md)
+* [【面试必备】透过源码角度一步一步带你分析 ArrayList 扩容机制](https://github.com/Snailclimb/JavaGuide/blob/master/Java相关/ArrayList-Grow.md)
+* [LinkedList 源码学习](https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/LinkedList.md)
+* [HashMap(JDK1.8)源码学习](https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/HashMap.md)  
+
+## Java IO 与 NIO
+
+* [Java IO 与 NIO系列文章](https://github.com/Snailclimb/Java_Guide/blob/master/Java相关/Java%20IO与NIO.md)
+
+## JVM
+
+* [可能是把Java内存区域讲的最清楚的一篇文章](https://github.com/Snailclimb/Java_Guide/blob/master/Java相关/可能是把Java内存区域讲的最清楚的一篇文章.md)
+* [搞定JVM垃圾回收就是这么简单](https://github.com/Snailclimb/Java_Guide/blob/master/Java相关/搞定JVM垃圾回收就是这么简单.md)
+* [Java虚拟机（jvm）学习与面试](https://github.com/Snailclimb/Java_Guide/blob/master/Java相关/Java虚拟机（jvm）.md)
+
+## 反射
+
+## 泛型

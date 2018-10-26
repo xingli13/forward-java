@@ -18,21 +18,3 @@
 
 ## sphinx 
 * [《Sphinx 的介绍和原理探索》](http://blog.jobbole.com/101672/)
-
-# 性能
-
-## 性能优化方法论
-
-* [《15天的性能优化工作，5方面的调优经验》](https://blog.csdn.net/huangwenyi1010/article/details/72673447?ref=myread)
-	* 代码层面、业务层面、数据库层面、服务器层面、前端优化。
-
-* [《系统性能优化的几个方面》](https://blog.csdn.net/tenglizhe/article/details/44563135)
-
-## 连接池
-
-* [《主流Java数据库连接池比较与开发配置实战》](https://blog.csdn.net/fysuccess/article/details/66972554)
-
-## 性能调优
-
-* [《九大Java性能调试工具，必备至少一款》](https://blog.csdn.net/yethyeth/article/details/73266455)
-
